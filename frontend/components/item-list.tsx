@@ -2,7 +2,7 @@
 
 import { useCounterStore } from "@/lib/store";
 
-export default function Counter() {
+export default function ItemList() {
   const { count, increment, decrement } = useCounterStore();
 
   return (

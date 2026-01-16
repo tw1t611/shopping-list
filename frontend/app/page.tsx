@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProductList from "@/components/product-list";
+import ItemList from "@/components/item-list";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
             To get started, edit the page.tsx file.
           </h1>
         </div>
-        <ProductList />
+        <ItemList />
       </main>
     </div>
   );

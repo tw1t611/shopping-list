@@ -49,7 +49,10 @@ bun run dev
 ## API Endpoints
 
 - `GET /health` - Health check endpoint
-- `GET /api` - API info endpoint
+- `GET /api/items` - Get all items
+- `POST /api/items` - Create a new item (`{ name: string }`)
+- `PUT /api/items/:id` - Update bought status (`{ bought: boolean }`)
+- `DELETE /api/items/:id` - Delete an item
 
 ## Environment Variables
 

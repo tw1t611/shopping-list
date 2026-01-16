@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { connectToDatabase, closeDatabase } from "./db";
 import itemsRouter from "./items";
+import { startServer } from "./server";
 
 dotenv.config();
 
@@ -20,31 +20,4 @@ app.get("/health", (req: Request, res: Response) => {
 
 app.use("/api/items", itemsRouter);
 
-// Start server
-async function startServer() {
-  try {
-    await connectToDatabase();
-
-    app.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
-    });
-  } catch (error) {
-    console.error("Failed to start server:", error);
-    process.exit(1);
-  }
-}
-
-// Graceful shutdown
-process.on("SIGINT", async () => {
-  console.log("\nShutting down gracefully...");
-  await closeDatabase();
-  process.exit(0);
-});
-
-process.on("SIGTERM", async () => {
-  console.log("\nShutting down gracefully...");
-  await closeDatabase();
-  process.exit(0);
-});
-
-startServer();
+startServer(app, PORT);

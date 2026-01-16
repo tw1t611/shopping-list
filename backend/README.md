@@ -17,7 +17,7 @@ Versioning was not added to the endpoints, because it is a monorepo and the api 
 docker-compose up
 ```
 
-2. The API will be available at `http://localhost:3000`
+2. The API will be available at `http://localhost:3001`
 
 3. Stop the services:
 ```bash
@@ -38,7 +38,7 @@ bun install
 bun run dev
 ```
 
-4. The API will be available at `http://localhost:3000`
+4. The API will be available at `http://localhost:3001`
 
 ## Available Scripts
 

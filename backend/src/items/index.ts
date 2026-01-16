@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getItems } from "./get-list";
+import { getItems } from "./get-items";
 import { createItem } from "./create-item";
 import { updateItem } from "./update-item";
 import { deleteItem } from "./delete-item";

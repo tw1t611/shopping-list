@@ -2,6 +2,8 @@
 
 Backend API built with Bun, Express, TypeScript, and MongoDB.
 Versioning was not added to the endpoints, because it is a monorepo and the api is used internally only.
+I prefere unit tests for the backend, which are not really necessary in this small example project.
+Instead of integration tests, e2e tests are used. You can find them in the frontend directory.
 
 ## Prerequisites
 

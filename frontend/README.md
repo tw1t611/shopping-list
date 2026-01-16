@@ -25,5 +25,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 To run the E2E tests, execute the following command:
 ```bash
-bun test:ui
+bun run test
 ```

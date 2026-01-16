@@ -7,8 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Trash2 } from "lucide-react";
 import { ShoppingItem } from "@/types/shopping-item";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+import { API_URL } from "@/lib/config";
 
 export default function ShoppingItemList() {
   const [newItemName, setNewItemName] = useState("");
@@ -56,9 +55,7 @@ export default function ShoppingItemList() {
   });
 
   return (
-    <div className="flex flex-col gap-4 p-4 max-w-md mx-auto">
-      <h2 className="text-2xl font-bold">Shopping List</h2>
-
+    <div className="flex flex-col gap-4 max-w-md mx-auto">
       <div className="flex gap-2">
         <Input
           type="text"

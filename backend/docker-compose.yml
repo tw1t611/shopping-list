@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: shopping-list-api
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017
+      - MONGODB_DB_NAME=shopping-list
+      - PORT=3000
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+      - ./tsconfig.json:/app/tsconfig.json
+    depends_on:
+      - mongo
+    networks:
+      - shopping-list-network
+
+  mongo:
+    image: mongo:7
+    container_name: shopping-list-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - shopping-list-network
+
+volumes:
+  mongo-data:
+
+networks:
+  shopping-list-network:
+    driver: bridge

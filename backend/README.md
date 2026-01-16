@@ -1,6 +1,7 @@
 # Shopping List Backend
 
 Backend API built with Bun, Express, TypeScript, and MongoDB.
+Versioning was not added to the endpoints, because it is a monorepo and the api is used internally only.
 
 ## Prerequisites
 

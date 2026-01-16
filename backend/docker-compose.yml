@@ -1,15 +1,15 @@
-version: '3.8'
+version: "3.8"
 
 services:
   api:
     build: .
     container_name: shopping-list-api
     ports:
-      - "3000:3000"
+      - "3001:3001"
     environment:
       - MONGODB_URI=mongodb://mongo:27017
       - MONGODB_DB_NAME=shopping-list
-      - PORT=3000
+      - PORT=3001
     volumes:
       - ./src:/app/src
       - ./package.json:/app/package.json
